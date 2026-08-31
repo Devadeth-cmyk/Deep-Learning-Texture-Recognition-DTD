@@ -39,7 +39,7 @@ The project uses the dataset's provided split files rather than creating a new r
 
 Describable Textures Dataset — Visual Geometry Group, University of Oxford
 
-[OFFICIAL DTD DATASET PAGE]
+[[OFFICIAL DTD DATASET PAGE]](https://www.robots.ox.ac.uk/~vgg/data/dtd/index.html)
 
 ### Dataset Citation
 
