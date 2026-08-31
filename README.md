@@ -1,6 +1,6 @@
-# DTD Texture Classification using EfficientNetB3
+# DTD Texture Classification using EfficientNetB0
 
-A Computer Vision project for multi-class texture classification using the **Describable Textures Dataset (DTD)** and an **EfficientNetB3-based transfer learning pipeline**.
+A Computer Vision project for multi-class texture classification using the **Describable Textures Dataset (DTD)** and an **EfficientNetB0-based transfer learning pipeline**.
 
 ## Project Overview
 
