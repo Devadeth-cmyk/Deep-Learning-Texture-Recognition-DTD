@@ -29,7 +29,6 @@ The dataset contains:
 - 5,640 images
 - 47 texture categories
 - 120 images per category
-- Images ranging from 300×300 to 640×640 pixels
 - Predefined training, validation and test splits
 - 40 images per class in each split
 
@@ -55,7 +54,7 @@ Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (C
 
 The project uses:
 
-- Image size: 300 × 300
+- Image size: 224 x 224
 - Batch size: 32
 - Random seed: 42
 - Number of classes: 47
@@ -123,7 +122,7 @@ Augmentation is intended to be applied only to training data, while validation a
 
 ### 7. Model Development
 
-The project uses **EfficientNetB3** as the selected convolutional neural network architecture.
+The project uses **EfficientNetB0** as the selected convolutional neural network architecture.
 
 The model is intended to use **transfer learning**, leveraging pretrained visual features for the 47-class texture classification task.
 
