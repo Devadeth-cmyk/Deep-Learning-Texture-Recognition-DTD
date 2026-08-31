@@ -97,7 +97,7 @@ Images are prepared for the EfficientNetB3 model using the following pipeline:
 
 1. Read image
 2. Convert BGR to RGB
-3. Resize to 300 × 300
+3. Resize to 224 x 224
 4. Convert to `float32`
 5. Apply EfficientNet-compatible preprocessing
 
