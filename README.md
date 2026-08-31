@@ -129,34 +129,6 @@ The model is intended to use **transfer learning**, leveraging pretrained visual
 
 > Model architecture, training configuration and evaluation results will be documented here after model development and training are completed.
 
-## Current Progress
-
-### Completed
-
-- [x] Dataset loading
-- [x] Official train/validation/test split loading
-- [x] Image path and label organization
-- [x] Dataset DataFrames
-- [x] Missing image checks
-- [x] Dataset statistics
-- [x] Class distribution analysis
-- [x] Representative image visualization
-- [x] Corrupt image checks
-- [x] EfficientNetB3-compatible image preprocessing
-- [x] Label encoding
-- [x] Data augmentation definition
-
-### In Progress / Remaining
-
-- [ ] EfficientNetB3 model architecture
-- [ ] Model compilation
-- [ ] Model training
-- [ ] Training/validation performance analysis
-- [ ] Test-set evaluation
-- [ ] Confusion matrix
-- [ ] Classification report
-- [ ] Final model analysis
-
 ## Technologies Used
 
 - Python
