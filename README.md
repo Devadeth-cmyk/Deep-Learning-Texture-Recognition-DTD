@@ -128,11 +128,100 @@ The model is intended to use **transfer learning**, leveraging pretrained visual
 
 > Model architecture, training configuration and evaluation results will be documented here after model development and training are completed.
 
+### 8. Model Architecture
+
+The project uses **EfficientNetB0** with pretrained ImageNet weights as the base model for transfer learning.
+
+The classification head consists of:
+
+- Global Average Pooling
+- Dense layer with 512 units and ReLU activation
+- Batch Normalization
+- Dropout with rate 0.5
+- Dense layer with 256 units and ReLU activation
+- Batch Normalization
+- Dropout with rate 0.3
+- Final Dense layer with 47 units and Softmax activation
+
+L2 regularization is applied to the intermediate Dense layers.
+
+The pretrained EfficientNetB0 layers are initially frozen, allowing the newly added classification layers to learn the texture-specific features.
+
+### 9. Model Compilation
+
+The model is compiled using:
+
+- Optimizer: Adam
+- Learning rate: 0.0003
+- Loss function: Sparse Categorical Crossentropy
+- Metric: Accuracy
+
+### 10. Model Training
+
+The model is trained using the training and validation datasets.
+
+Training configuration:
+
+- Batch size: 32
+- Maximum epochs: 25
+
+The following callbacks are used:
+
+- `ModelCheckpoint` — saves the model with the best validation accuracy
+- `EarlyStopping` — stops training when validation performance stops improving
+- `ReduceLROnPlateau` — reduces the learning rate when validation loss stops improving
+
+### 11. Training Performance
+
+Training and validation accuracy and loss are monitored throughout the training process.
+
+The model achieved approximately:
+
+- Training accuracy: **86.44%**
+- Validation accuracy: **65.11%**
+
+Training and validation performance are visualized using accuracy and loss curves.
+
+### 12. Model Evaluation
+
+The trained model is evaluated using the separate DTD test dataset.
+
+The final test performance is:
+
+- Test Accuracy: **66.33%**
+- Test Loss: **1.3648**
+
+The test set contains 1,880 images from the 47 texture categories.
+
+### 13. Single Image Prediction
+
+The notebook also performs prediction on individual test images.
+
+The prediction pipeline consists of:
+
+1. Load the image
+2. Convert BGR to RGB
+3. Resize to 224 x 224
+4. Apply EfficientNet preprocessing
+5. Generate the prediction
+6. Select the class with the highest probability
+7. Display the predicted class and confidence
+
+A sample prediction in the notebook correctly classified a `flecked` texture with a confidence of **86.38%**.
+
+### 14. Results
+
+The EfficientNetB0 model achieved a test accuracy of **66.33%** on the DTD test split.
+
+The results show that transfer learning with EfficientNetB0 can effectively learn visual features for classifying the 47 different texture categories.
+
+The difference between training and validation accuracy also indicates some degree of overfitting.
+
 ## Technologies Used
 
 - Python
 - TensorFlow / Keras
-- EfficientNetB3
+- EfficientNetB0
 - OpenCV
 - NumPy
 - Pandas
@@ -143,9 +232,9 @@ The model is intended to use **transfer learning**, leveraging pretrained visual
 ## Project Structure
 
 ```text
-DTD-Texture-Classification-EfficientNetB3/
+DTD-Texture-Classification-EfficientNetB0/
 │
 ├── DTD_Texture_Classification.ipynb
 ├── README.md
 ├── requirements.txt
-└── ...
+
